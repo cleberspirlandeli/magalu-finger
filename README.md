@@ -10,35 +10,35 @@ Ferramenta para gerenciar o banco de dados, sugiro o [pgAdmin 4], mas fique a vo
 Ferramenta de desenvolvimento, sugiro o [Visual Studio], mas fique a vontade para utilizar o de sua preferencia. Clique para realizar o [download do VS Code]. <br />
 
 1. Após instalar e configurar as ferramentas, é necessário configurar o banco de dados, abra o pgAdmin 4. <br />
-... Execute os códigos que estão no arquivo **CriarBanco.sql** <br />
-... Caminho: /backend/src/config/database/CriarBanco.sql <br />
+Execute os códigos que estão no arquivo **CriarBanco.sql** <br />
+Caminho: /backend/src/config/database/CriarBanco.sql <br />
 
-... Execute os códigos que estão no arquivo **kryptosGraphein.sql** <br />
-... Caminho: /backend/src/config/database/kryptosGraphein.sql <br />
+Execute os códigos que estão no arquivo **kryptosGraphein.sql** <br />
+Caminho: /backend/src/config/database/kryptosGraphein.sql <br />
 
-... Execute os códigos que estão no arquivo **colaborador.sql** <br />
-... Caminho: /backend/src/gestorLoja/colaborador.sql <br />
+Execute os códigos que estão no arquivo **colaborador.sql** <br />
+Caminho: /backend/src/gestorLoja/colaborador.sql <br />
 
-...Execute os códigos que estão no arquivo **produto.sql** <br />
-...Caminho: /backend/src/gestorProdutro/produto.sql <br />
+Execute os códigos que estão no arquivo **produto.sql** <br />
+Caminho: /backend/src/gestorProdutro/produto.sql <br />
 
-...Execute os códigos que estão no arquivo **login.sql** <br />
-...Caminho: /backend/src/login/login.sql <br />
+Execute os códigos que estão no arquivo **login.sql** <br />
+Caminho: /backend/src/login/login.sql <br />
 
-...Execute os códigos que estão no arquivo **login.sql** <br />
-...Caminho: /backend/src/loja/loja.sql <br />
+Execute os códigos que estão no arquivo **login.sql** <br />
+Caminho: /backend/src/loja/loja.sql <br />
 
 2. **Após executar todos os comandos SQL:** <br />
 Acessar a pasta **FRONTEND** e com o prompt de comando executar: <br />
-...**npm install** _aguardar o download ser concluído_ <br />
-...**npm rum dev** _para executar o servidor em ambiende de desenvolvimento_ <br />
-...**pm2 start app** _para executar o servidor em ambiende de produção_ <br />
+**npm install** _aguardar o download ser concluído_ <br />
+**npm rum dev** _para executar o servidor em ambiende de desenvolvimento_ <br />
+**pm2 start app** _para executar o servidor em ambiende de produção_ <br />
 
 
 3. **Após executar o servidor Node JS, entre na pasta FRONTEND e executar:** <br />
-...**npm install** _aguardar o download ser concluído_ <br />
-...**npm rum dev** _para executar o servidor em ambiende de desenvolvimento_ <br />
-...**npm rum production** _para executar o servidor em ambiende de produção_ <br />
+**npm install** _aguardar o download ser concluído_ <br />
+**npm rum dev** _para executar o servidor em ambiende de desenvolvimento_ <br />
+**npm rum production** _para executar o servidor em ambiende de produção_ <br />
 
 ### License
 Copyright (c) 2017 Cleber R. Spirlandeli (contato.cleberrezende@gmail.com)
