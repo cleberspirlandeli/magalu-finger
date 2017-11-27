@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tarefas</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+
+  <div id="app" class="container"></div>
+  <script src="app.js"></script>
+
+  <script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
+  <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script>
+  <script>
+    $(function () {
+      $('.dropdown-toggle').dropdown();
+    });
+
+
+    $('#listaTipoColaborador li').on('click', function () {
+      $('#tipoColabarador').val($(this).text());
+    });
+    
+
+  </script>
+</body>
+
+</html>

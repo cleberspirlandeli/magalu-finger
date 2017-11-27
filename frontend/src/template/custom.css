@@ -1,0 +1,34 @@
+.btn{
+    margin-right: 5px;
+}
+.markedAsDone{
+    text-decoration: line-through;
+    color:#777;
+}
+.tableActions{
+    width: 105px;
+}
+.todoForm{
+    padding-bottom: 80px;
+}
+.cadastrar-cliente{
+    color: #777;
+    size:7px;
+    padding-left: 20px;
+    font-weight: bold;
+}
+.padding-top{
+    padding-top: 15px;
+}
+.padding-bottom{
+    padding-bottom: 40px;
+}
+.padding-bottom{
+    padding-bottom: 40px;
+}
+.cursor-pointer {
+    cursor: pointer !important;
+}
+.margin-right{
+    margin-right:10px;
+}
