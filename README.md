@@ -34,7 +34,7 @@ Ferramenta de desenvolvimento, sugiro o [Visual Studio], mas fique a vontade par
 
 
 2. **Após executar todos os comandos SQL:** <br />
-Acessar a pasta **FRONTEND** e com o prompt de comando executar: <br />
+Acessar a pasta **BACKEND** e com o prompt de comando executar: <br />
 **npm install** _aguardar o download ser concluído_ <br />
 **npm rum dev** _para executar o servidor em ambiende de desenvolvimento_ <br />
 **pm2 start app** _para executar o servidor em ambiende de produção_ <br />
