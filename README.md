@@ -4,10 +4,12 @@
 
 Banco de Dados: [PostgreSQL] 9.6 ou superior. Clique para realizar o [download do PostgreSQL].
 Servidor: [Node Js] 8 ou superior.
-Ferramenta para gerenciar o banco de dados, sugiro o [pgAdmin 4], mas fique a vontade para utilizar o de sua preferencia. Clique para realizar o [download do pgAdmin].
-Ferramenta de desenvolvimento, sugiro o [Visual Studio], , mas fique a vontade para utilizar o de sua preferencia. Clique para realizar o [download do VS Code].
 
-+ Após instalar e configurar as ferramentas, é necessário configurar o banco de dados, abra o pgAdmin 4.
+Ferramenta para gerenciar o banco de dados, sugiro o [pgAdmin 4], mas fique a vontade para utilizar o de sua preferencia. Clique para realizar o [download do pgAdmin].
+
+Ferramenta de desenvolvimento, sugiro o [Visual Studio], mas fique a vontade para utilizar o de sua preferencia. Clique para realizar o [download do VS Code].
+
+1. Após instalar e configurar as ferramentas, é necessário configurar o banco de dados, abra o pgAdmin 4.
 ...Execute os códigos que estão no arquivo **CriarBanco.sql**
 ...Caminho: /backend/src/config/database/CriarBanco.sql
 
@@ -26,14 +28,14 @@ Ferramenta de desenvolvimento, sugiro o [Visual Studio], , mas fique a vontade p
 ...Execute os códigos que estão no arquivo **login.sql**
 ...Caminho: /backend/src/loja/loja.sql
 
-+ **Após executar todos os comandos SQL:**
+2. **Após executar todos os comandos SQL:**
 Acessar a pasta **FRONTEND** e com o prompt de comando executar:
 ...**npm install** _aguardar o download ser concluído_
 ...**npm rum dev** _para executar o servidor em ambiende de desenvolvimento_
 ...**pm2 start app** _para executar o servidor em ambiende de produção_
 
 
-+ **Após executar o servidor Node JS, entre na pasta FRONTEND e executar:**
+3. **Após executar o servidor Node JS, entre na pasta FRONTEND e executar:**
 ...**npm install** _aguardar o download ser concluído_
 ...**npm rum dev** _para executar o servidor em ambiende de desenvolvimento_
 ...**npm rum production** _para executar o servidor em ambiende de produção_
