@@ -1,4 +1,4 @@
-#Projeto LuizaLabs - Magalu-Finder
+# Projeto LuizaLabs - Magalu-Finder
 
 - Para executar o Magalu-Finder é necessario ter instalado as seguintes ferramentas:
 
@@ -40,7 +40,7 @@ Acessar a pasta **FRONTEND** e com o prompt de comando executar:
 ...**npm rum dev** _para executar o servidor em ambiende de desenvolvimento_
 ...**npm rum production** _para executar o servidor em ambiende de produção_
 
-##License
+## License
 Copyright (c) 2017 Cleber R. Spirlandeli (contato.cleberrezende@gmail.com)
 
 [PostgreSQL]: https://www.postgresql.org/
