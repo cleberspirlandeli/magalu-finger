@@ -7,7 +7,7 @@ Node Js 8.9.0 <br />
 React Js 15.4.2 <br />
 NPM 5.5.1 <br /> 
 PostgreSQL 9.6.6 <br /> <br />
----
+___
 
 - Para executar o Magalu-Finder é necessario ter instalado as seguintes ferramentas: <br />
 
@@ -45,7 +45,7 @@ Acessar a pasta **FRONTEND** e com o prompt de comando executar: <br />
 **npm rum dev** _para executar o servidor em ambiende de desenvolvimento_ <br />
 **npm rum production** _para executar o servidor em ambiende de produção_ <br />
 
-
+---
 ### License
 Copyright (c) 2017 Cleber R. Spirlandeli (contato.cleberrezende@gmail.com)
 
