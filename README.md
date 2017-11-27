@@ -1,4 +1,4 @@
-![logo]
+![][logo]
 
 # Projeto LuizaLabs - Magalu-Finder
 
