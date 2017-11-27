@@ -15,26 +15,26 @@ Ferramenta de desenvolvimento, sugiro o [Visual Studio], mas fique a vontade par
 + Execute os códigos que estão no arquivo **kryptosGraphein.sql** <br />
  _Caminho: /backend/src/config/database/kryptosGraphein.sql_ <br /> <br />
 + Execute os códigos que estão no arquivo **colaborador.sql** <br />
- _Caminho: /backend/src/gestorLoja/colaborador.sql_ <br />
-+ Execute os códigos que estão no arquivo **produto.sql** <br />
- _Caminho: /backend/src/gestorProdutro/produto.sql_ <br />
+ _Caminho: /backend/src/gestorLoja/colaborador.sql_ <br /> <br />
++ Execute os códigos que estão no arquivo **produto.sql** <br /> 
+ _Caminho: /backend/src/gestorProdutro/produto.sql_ <br /> <br />
 + Execute os códigos que estão no arquivo **login.sql** <br />
- _Caminho: /backend/src/login/login.sql_ <br />
+ _Caminho: /backend/src/login/login.sql_ <br /> <br />
 + Execute os códigos que estão no arquivo **login.sql** <br />
- _Caminho: /backend/src/loja/loja.sql_ <br />
-
+ _Caminho: /backend/src/loja/loja.sql_ <br /> <br />
+<br />
 2. **Após executar todos os comandos SQL:** <br />
 Acessar a pasta **FRONTEND** e com o prompt de comando executar: <br />
 **npm install** _aguardar o download ser concluído_ <br />
 **npm rum dev** _para executar o servidor em ambiende de desenvolvimento_ <br />
 **pm2 start app** _para executar o servidor em ambiende de produção_ <br />
 
-
+<br />
 3. **Após executar o servidor Node JS, entre na pasta FRONTEND e executar:** <br />
 **npm install** _aguardar o download ser concluído_ <br />
 **npm rum dev** _para executar o servidor em ambiende de desenvolvimento_ <br />
 **npm rum production** _para executar o servidor em ambiende de produção_ <br />
-
+<br /><br />
 ### License
 Copyright (c) 2017 Cleber R. Spirlandeli (contato.cleberrezende@gmail.com)
 
