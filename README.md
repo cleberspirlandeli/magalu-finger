@@ -1,3 +1,5 @@
+[logo]
+
 # Projeto LuizaLabs - Magalu-Finder
 
 - Para executar o Magalu-Finder é necessario ter instalado as seguintes ferramentas: <br />
@@ -39,6 +41,8 @@ Acessar a pasta **FRONTEND** e com o prompt de comando executar: <br />
 
 ### License
 Copyright (c) 2017 Cleber R. Spirlandeli (contato.cleberrezende@gmail.com)
+
+[logo]: https://www.google.com.br/imgres?imgurl=https%3A%2F%2Fwww.clubeportoseguro.com.br%2FUploads%2FImagemOferta%2FImgOferta_16122015120837960.png&imgrefurl=https%3A%2F%2Fwww.clubeportoseguro.com.br%2Fbeneficios%2Fcompras%2Fconstrucao-e-decoracao%2F704%2Fate-10-porcento-de-desconto-em-todo-o-site&docid=bY87u5iUe_K0UM&tbnid=RXV6MS6_Q6xTVM%3A&vet=10ahUKEwjqg8es2t3XAhXGGJAKHYiGBq0QMwgzKA0wDQ..i&w=490&h=260&bih=637&biw=1366&q=magazine%20luiza&ved=0ahUKEwjqg8es2t3XAhXGGJAKHYiGBq0QMwgzKA0wDQ&iact=mrc&uact=8
 
 [PostgreSQL]: https://www.postgresql.org/
 [download do PostgreSQL]: https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows
