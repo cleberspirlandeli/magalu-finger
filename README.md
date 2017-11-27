@@ -11,9 +11,9 @@ Ferramenta de desenvolvimento, sugiro o [Visual Studio], mas fique a vontade par
 
 1. Após instalar e configurar as ferramentas, é necessário configurar o banco de dados, abra o pgAdmin 4. <br />
 + Execute os códigos que estão no arquivo **CriarBanco.sql** <br />
- _Caminho: /backend/src/config/database/CriarBanco.sql_ <br />
+ _Caminho: /backend/src/config/database/CriarBanco.sql_ <br /> <br />
 + Execute os códigos que estão no arquivo **kryptosGraphein.sql** <br />
- _Caminho: /backend/src/config/database/kryptosGraphein.sql_ <br />
+ _Caminho: /backend/src/config/database/kryptosGraphein.sql_ <br /> <br />
 + Execute os códigos que estão no arquivo **colaborador.sql** <br />
  _Caminho: /backend/src/gestorLoja/colaborador.sql_ <br />
 + Execute os códigos que estão no arquivo **produto.sql** <br />
