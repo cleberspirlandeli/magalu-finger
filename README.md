@@ -10,17 +10,17 @@ Ferramenta para gerenciar o banco de dados, sugiro o [pgAdmin 4], mas fique a vo
 Ferramenta de desenvolvimento, sugiro o [Visual Studio], mas fique a vontade para utilizar o de sua preferencia. Clique para realizar o [download do VS Code]. <br />
 
 1. Após instalar e configurar as ferramentas, é necessário configurar o banco de dados, abra o pgAdmin 4. <br />
-+Execute os códigos que estão no arquivo **CriarBanco.sql** <br />
++ Execute os códigos que estão no arquivo **CriarBanco.sql** <br />
 Caminho: /backend/src/config/database/CriarBanco.sql <br />
-+Execute os códigos que estão no arquivo **kryptosGraphein.sql** <br />
++ Execute os códigos que estão no arquivo **kryptosGraphein.sql** <br />
 Caminho: /backend/src/config/database/kryptosGraphein.sql <br />
-+Execute os códigos que estão no arquivo **colaborador.sql** <br />
++ Execute os códigos que estão no arquivo **colaborador.sql** <br />
 Caminho: /backend/src/gestorLoja/colaborador.sql <br />
-+Execute os códigos que estão no arquivo **produto.sql** <br />
++ Execute os códigos que estão no arquivo **produto.sql** <br />
 Caminho: /backend/src/gestorProdutro/produto.sql <br />
-+Execute os códigos que estão no arquivo **login.sql** <br />
++ Execute os códigos que estão no arquivo **login.sql** <br />
 Caminho: /backend/src/login/login.sql <br />
-+Execute os códigos que estão no arquivo **login.sql** <br />
++ Execute os códigos que estão no arquivo **login.sql** <br />
 Caminho: /backend/src/loja/loja.sql <br />
 
 2. **Após executar todos os comandos SQL:** <br />
