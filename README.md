@@ -2,10 +2,12 @@
 
 # Projeto LuizaLabs - Magalu-Finder
 
-Projeto desenvolvido em <br />
+Tecnologias utilizadas: <br />
 Node Js 8.9.0 <br />
-React JS 15.4.2 <br />
-NPM 5.5.1 <br /> <br />
+React Js 15.4.2 <br />
+NPM 5.5.1 <br /> 
+PostgreSQL 9.6.6 <br /> <br />
+---
 
 - Para executar o Magalu-Finder é necessario ter instalado as seguintes ferramentas: <br />
 
