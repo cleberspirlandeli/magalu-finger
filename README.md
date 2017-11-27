@@ -11,17 +11,17 @@ Ferramenta de desenvolvimento, sugiro o [Visual Studio], mas fique a vontade par
 
 1. Após instalar e configurar as ferramentas, é necessário configurar o banco de dados, abra o pgAdmin 4. <br />
 + Execute os códigos que estão no arquivo **CriarBanco.sql** <br />
-... Caminho: /backend/src/config/database/CriarBanco.sql <br />
+ _Caminho: /backend/src/config/database/CriarBanco.sql_ <br />
 + Execute os códigos que estão no arquivo **kryptosGraphein.sql** <br />
-... Caminho: /backend/src/config/database/kryptosGraphein.sql <br />
+ _Caminho: /backend/src/config/database/kryptosGraphein.sql_ <br />
 + Execute os códigos que estão no arquivo **colaborador.sql** <br />
-... Caminho: /backend/src/gestorLoja/colaborador.sql <br />
+ _Caminho: /backend/src/gestorLoja/colaborador.sql_ <br />
 + Execute os códigos que estão no arquivo **produto.sql** <br />
-... Caminho: /backend/src/gestorProdutro/produto.sql <br />
+ _Caminho: /backend/src/gestorProdutro/produto.sql_ <br />
 + Execute os códigos que estão no arquivo **login.sql** <br />
-Caminho: /backend/src/login/login.sql <br />
+ _Caminho: /backend/src/login/login.sql_ <br />
 + Execute os códigos que estão no arquivo **login.sql** <br />
-Caminho: /backend/src/loja/loja.sql <br />
+ _Caminho: /backend/src/loja/loja.sql_ <br />
 
 2. **Após executar todos os comandos SQL:** <br />
 Acessar a pasta **FRONTEND** e com o prompt de comando executar: <br />
