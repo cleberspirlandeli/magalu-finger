@@ -41,6 +41,7 @@ export default class Colaborador extends Component {
 
         // FORMULÁRIO Colaborador
         this.getToken = this.getToken.bind(this);
+        this.timeMessage = this.timeMessage.bind(this);
         this.adicionarColaborador = this.adicionarColaborador.bind(this);
         this.removerColaborador = this.removerColaborador.bind(this);
         this.selecionarColaboradorId = this.selecionarColaboradorId.bind(this);
@@ -67,6 +68,18 @@ export default class Colaborador extends Component {
             window.location.href = "http://localhost/#/login"
         }
         return;
+    }
+
+    timeMessage(){
+        setTimeout(function(){ 
+            this.setState({
+                ...this.state,
+                alertError: false,
+                alertSuccess: false,
+                messageSuccess: '',
+                messageError: ''
+            });
+        }.bind(this), 5000);
     }
 
     digitarPesquisa(e) {
@@ -122,6 +135,7 @@ export default class Colaborador extends Component {
                         messageSuccess: '',
                         messageError: e.response.data.message
                     });
+                    this.timeMessage();
                     if (e.response.status == 401 || e.response.status == 403) {
                         window.location.href = "http://localhost/#/login"
                     }
@@ -183,6 +197,7 @@ export default class Colaborador extends Component {
                             messageError: '',
                         });
                         this.refresh(this.state.pesquisar);
+                        this.timeMessage();
                     }
                 })
                 .catch(e => {
@@ -193,7 +208,8 @@ export default class Colaborador extends Component {
                         messageSuccess: '',
                         messageError: e.response.data.data.message
                     });
-                    // console.log(e.response.data.data.message);
+                    this.timeMessage();
+                    this.timeMessage();
                 });
         });
     }
@@ -212,6 +228,7 @@ export default class Colaborador extends Component {
                     }
                 })
                 .then(res => {
+                    this.refresh(this.state.pesquisar)
                     this.setState({
                         ...this.state,
                         alertError: false,
@@ -220,6 +237,7 @@ export default class Colaborador extends Component {
                         messageError: '',
                     });
                     this.refresh(this.state.pesquisar)
+                    this.timeMessage();
                 })
                 .catch(e => {
                     this.setState({
@@ -229,6 +247,7 @@ export default class Colaborador extends Component {
                         messageSuccess: '',
                         messageError: e.response.data.data.message
                     });
+                    this.timeMessage();
                 })
         }).catch(e => {
             this.setState({
@@ -285,6 +304,7 @@ export default class Colaborador extends Component {
                         messageSuccess: res.data.data.message,
                         messageError: '',
                     });
+                    this.timeMessage();
                 })
                 .catch(e => {
                     this.setState({
@@ -293,7 +313,8 @@ export default class Colaborador extends Component {
                         alertSuccess: false,
                         messageSuccess: '',
                         messageError: e.response.data.data.message
-                    })
+                    });
+                    this.timeMessage();
                 })
         }).catch(e => {
             this.setState({
@@ -302,7 +323,8 @@ export default class Colaborador extends Component {
                 alertSuccess: false,
                 messageSuccess: '',
                 messageError: e.response.data.data.message
-            })
+            });
+            this.timeMessage();
         })
     }
 

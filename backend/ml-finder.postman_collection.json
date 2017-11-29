@@ -1,0 +1,473 @@
+{
+	"info": {
+		"name": "ml-finder",
+		"_postman_id": "0f0d1d6f-95a9-20be-007d-09c617b9e38c",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Colaborador",
+			"description": "",
+			"item": [
+				{
+					"name": "POST COLABORADOR",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "token:7d107054c91c4b2dda6b30cfd40a90d15d1811d9707320b8e2a640866447d7e709af55ee8f910b2a41b1229728eb50e13223e09207c27f89928bba9e4b6117fe8208346840ea3f79878694fa33dce273646418f05cc9761d3a7daba0c55cf5a020a89dac7873ca76573e9a892beea76518dea288d51d435c6db4c4118d669a0ae6edc907fb744ecc163018c268cb5988efb6372eae08c4d3a93c2efe58a50afab0a995b52ef4bb93bf96fd08661a5ab98d7cfdaaeea8cf1e6ed6fd663fe7fe9f564582aa7cd4e68f436500f6c7e83887b966b5e436b12d46900a914984bc06fb93c93b417b220e4598569af7e1e61c04cf4380c54949b3e2a110c1f62a08daeddc8170f4b52a067434aebf3edd68bbea3874bb898e"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nomeColaborador\":\"Cleber\",\n\t\"tipoColaborador\":\"Gestor\",\n\t\"senha\":\"12345678\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/colaborador/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"colaborador",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "DEL COLABORADOR",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "token:7d107054c91c4b2dda6b30cfd40a90d15d1811d9707320b8e2a640866447d7e709af55ee8f910b2a41b1229728eb50e13223e69a1ffa7faf8ba1baa051492dc3800e374d67df034ff1b7bfa471f4ef2a7e7c2ade39cc76154d4dcce68671eb8e4f9fa5af4c46c672770fb58561f79a7e1bf48be2cc316d2e4ca1f515f55ef10dbfc3b904f96155d4153c72c67afd5998e39c6f07b10cc4fdb83f3d8f58a620fab1ab80d420f5b9adb094ed08671a59e28f7cc4ccbdafcc3f66fec35766cfc3b61e42bc807cd5f69b09673ed8c0eb3faee54fbeef339b0f42c808af4981bf16d592cb056c72420778e82d93b7d6b51315f059df87516f83c49e4fd3ab333bc4d3e3ac66ddc41a282c00bfa20ff3168de302"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/colaborador/MjAxNy0xMS0yOCAwMl4qXzM1XyQl/MjAxNy0xMS0yOCAwMl4qXzQ4XyQl",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"colaborador",
+								"MjAxNy0xMS0yOCAwMl4qXzM1XyQl",
+								"MjAxNy0xMS0yOCAwMl4qXzQ4XyQl"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET COLABORADOR",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token:7d107054c91c4b2dda6b30cfd40a90d15d1811d9707320b8e2a640866447d7e709af55ee8f910b2a41b1229728eb50e13223e09207c27f89928bba9e4b6117fe8208346840ea3f79878694fa33dce273646418f05cc9761d3a7daba0c55cf5a020a89dac7873ca76573e9a892beea76518dea288d51d435c6db4c4118d669a0ae6edc907fb744ecc163018c268cb5988efb6372eae08c4d3a93c2efe58a50afab0a995b52ef4bb93bf96fd08661a5ab98d7cfdaaeea8cf1e6ed6fd663fe7fe9f564582aa7cd4e68f436500f6c7e83887b966b5e436b12d46900a914984bc06fb93c93b417b220e4598569af7e1e61c04cf4380c54949b3e2a110c1f62a08daeddc8170f4b52a067434aebf3edd68bbea3874bb898e"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/api/colaborador?q=adm",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"colaborador"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "adm",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PUT COLABORADOR",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "token:7d107054c91c4b2dda6b30cfd40a90d15d1811d9707320b8e2a640866447d7e709af55ee8f910b2a41b1229728eb50e13223e69a1ffa7faf8ba1baa051492dc3800e374d67df034ff1b7bfa471f4ef2a7e7c2ade39cc28374d4cb9eea271eb8e4f9fa5914e46c672770fb58561f79a7e1bf48be2cc316d2e4ca1f515f55ef10dbfc3b904f96155d4153c72c67afd5998e39c6f07b10cc4fdb83f3d8f58a620fab1aaf7d42ef687adb096ed08671973e28f7fc4c8bdafcc3f66fec35766cfc3b61e42bc807cd5f6834c643ef68beb3faee54fbeef339b0f42c808af4981bc38f3dcc9054e72423025ef2287b5e2a4560ee86d8d9e374d9ddf8f2ec7a31120b3fbfcf74fcfcd3a264b0090bd58ff3989a830"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nomeColaborador\":\"Cleber Alterado PUT\",\n\t\"tipoColaborador\":\"Gestor\",\n\t\"senhaColaborador\":\"112233\",\n\t\"ativo\":\"S\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/colaborador/MjAxNy0xMS0yNyAxOV4qXzcwXyQl/MjAxNy0xMS0yNyAxOV4qXzcwXyQl",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"colaborador",
+								"MjAxNy0xMS0yNyAxOV4qXzcwXyQl",
+								"MjAxNy0xMS0yNyAxOV4qXzcwXyQl"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Loja",
+			"description": "",
+			"item": [
+				{
+					"name": "POST LOJA",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "token:7d107054c91c4b2dda6b30cfd40a90d15d1811d9707320b8e2a640866447d7e709af55ee8f910b2a41b1229728eb50e13223e09207c27f89928bba9e4b6117fe8208346840ea3f79878694fa33dce273646418f05cc9761d3a7daba0c55cf5a020a89dac7873ca76573e9a892beea76518dea288d51d435c6db4c4118d669a0ae6edc907fb744ecc163018c268cb5988efb6372eae08c4d3a93c2efe58a50afab0a995b52ef4bb93bf96fd08661a5ab98d7cfdaaeea8cf1e6ed6fd663fe7fe9f564582aa7cd4e68f436500f6c7e83887b966b5e436b12d46900a914984bc06fb93c93b417b220e4598569af7e1e61c04cf4380c54949b3e2a110c1f62a08daeddc8170f4b52a067434aebf3edd68bbea3874bb898e"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"descricao\": \"Loja Teste Post\" ,\n    \"codigoFilial\": 134,\n    \"cep\": \"14406012\",\n    \"cidade\": \"Franca\",\n    \"estado\":\"Sp\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/loja/MjAxNy0xMS0yOCAyMl4qXzE5Ml8kJQ==",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"loja",
+								"MjAxNy0xMS0yOCAyMl4qXzE5Ml8kJQ=="
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET LOJA",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token:7d107054c91c4b2dda6b30cfd40a90d15d1811d9707320b8e2a640866447d7e709af55ee8f910b2a41b1229728eb50e13223e09207c27f89928bba9e4b6117fe8208346840ea3f79878694fa33dce273646418f05cc9761d3a7da892c55cf5a020a89dac7873ca76573e9a892beea76518dea288d51d435c6db4c4118d669a0ae6edc907fb744ecc163018c268cb5988efb6372eae08c4d3a93c2efe58a50afab0a995b52ef4bb93bf96c308661a64b98d7fd7aaecabe10a6ed6fd663fe7fe9f564582aa7cd4e68f436500fa8aea168ff066b5e436b12d46900a914984bc06fb93c93b5d7f23205d9856af82f5960034d7409a9f6948a382a81ee49a301caabdd0a150a0894b53741199a71cf31d80e93469bbb9d9"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/api/loja/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"loja",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE LOJA",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/loja/MjAxNy0xMS0yNyAyM14qXzEyOF8kJQ==/MjAxNy0xMS0yNyAyM14qXzE5XyQl",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"loja",
+								"MjAxNy0xMS0yNyAyM14qXzEyOF8kJQ==",
+								"MjAxNy0xMS0yNyAyM14qXzE5XyQl"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PUT LOJA",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descricao\":\"PUT Postman Alterar\",\n    \"codigoFilial\":123333,\n    \"cep\":\"14400012\",\n    \"cidade\":\"Franca\",\n    \"estado\":\"SP\",\n    \"ativo\":\"S\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/loja/MjAxNy0xMS0yNyAyM14qXzcwXyQl/MjAxNy0xMS0yNyAyM14qXzRfJCU=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"loja",
+								"MjAxNy0xMS0yNyAyM14qXzcwXyQl",
+								"MjAxNy0xMS0yNyAyM14qXzRfJCU="
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Produto",
+			"description": "",
+			"item": [
+				{
+					"name": "POST PRODUTO",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "token:7d107054c91c4b2dda6b30cfd40a90d15d1811d9707320b8e2a640866447d7e709af55ee8f910b2a41b1229728eb50e13223e69a1ffa7faf8ba1baa051492dc3800e374d67df034ff1b7bfa471f4ef2a7e7c2ade39cc28374d4ca9e78d71eb8e4f9fa5af4c46c672770fb58561f79a7e1bf48be2cc316d2e4ca1f515f55ef10dbfc3b904f96155d4153c72c67afd5998e39c6f07b10cc4fdb83f3d8f58a620fab1ab80d420f687adf996ed08671973e2c57cc4f2bdafcc3f66fec35766cfc3b61e42bc807cd5f687086410f68beb3faee54fbeef339b0f42c808af4981bf16fbd1c9054e7242316ee808bd94fbb5300bf370bc84497dbefe853eeeb2251aefc784bc36a28e0d277335d0a507df15aed263"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"descricao\":\"Mesa Jantar 6 Lugares\",\n\t\"codigoProduto\":5053,\n\t\"valorVenda\":599.90,\n\t\"quantidade\":7000\n}\n"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/produto/MjAxNy0xMS0yNyAyM14qXzE4XyQl",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"produto",
+								"MjAxNy0xMS0yNyAyM14qXzE4XyQl"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GET PRODUTO",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "token:7d107054c91c4b2dda6b30cfd40a90d15d1811d9707320b8e2a640866447d7e709af55ee8f910b2a41b1229728eb50e13223e09207c27f89928bba9e4b6117fe8208346840ea3f79878694fa33dce273646418f05ccd761d3c7da98ec55cf5a020a89dac7873ca76573e9a892beea76518dea288d51d435c6db4c4118d669a0ae6edc907fb744ecc163018c268cb5988efb6372eae08c4d3a93c2efe58a50afab0a995b52ef4bb93bf96d308661a4ab9c47cfdaaaba8e1246ed6fd663fe7fe9f564582aa7cd4e68f436500fac2e82887b966b5e436b12d46900a914984bc06fb93c93b637a220e45985696bff19b133ace6d8296615d90c3b734e284047efdefd78831cfb82d594a39db9027c801b9dc057a8baed9"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/produto/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"produto",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PUT PRODUTO",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "token:7d107054c91c4b2dda6b30cfd40a90d15d1811d9707320b8e2a640866447d7e709af55ee8f910b2a41b1229728eb50e13223e69a1ffa7faf8ba1baa051492dc3800e374d67df034ff1b7bfa471f4ef2a7e7c2ade39cc76154d4dcce6b271eb8e4f9fa5af4c46c672770fb58561f79a7e1bf48be2cc316d2e4ca1f515f55ef10dbfc3b904f96155d4153c72c67afd5998e39c6f07b10cc4fdb83f3d8f58a620fab1ab80d420f697adbf95ed082f1a63e2c47cc4fabdafcc3f66fec35766cfc3b61e42bc807cd5f6870f673ed4c3eb3faee54fbeef339b0f42c808af4981bf16fb92cb155a7242437cf32b9982c6831704b625a08546528be7d82bea8a0073efffd29169f0961430714491ba00e430b7e13c"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"descricao\":\"Notebook ASUS TOP\",\n\t\"codigoProduto\": 154422644788,\n\t\"valorVenda\": 1390.90,\n\t\"quantidade\": 10,\n\t\"ativo\":\"S\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/produto/MjAxNy0xMS0yOCAwMF4qXzM1XyQl/MjAxNy0xMS0yOCAwMF4qXzZfJCU=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"produto",
+								"MjAxNy0xMS0yOCAwMF4qXzM1XyQl",
+								"MjAxNy0xMS0yOCAwMF4qXzZfJCU="
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "DEL PRODUTO",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"descricao\":\"Mesa Jantar 6 Lugares\",\n\t\"codigoProduto\":5053,\n\t\"valorVenda\":599.90,\n\t\"quantidade\":7000\n}\n"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/produto/MjAxNy0xMS0yOCAwMF4qXzM1XyQl/MjAxNy0xMS0yOCAwMF4qXzZfJCU=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"produto",
+								"MjAxNy0xMS0yOCAwMF4qXzM1XyQl",
+								"MjAxNy0xMS0yOCAwMF4qXzZfJCU="
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"description": "",
+			"item": [
+				{
+					"name": "LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "",
+								"value": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"usuario\":\"admin\",\n\t\"senha\":\"123456\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

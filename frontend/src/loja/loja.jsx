@@ -43,6 +43,7 @@ export default class Loja extends Component {
 
         // FORMULÁRIO Loja
         this.getToken = this.getToken.bind(this);
+        this.timeMessage = this.timeMessage.bind(this);
         this.adicionarLoja = this.adicionarLoja.bind(this);
         this.removerLoja = this.removerLoja.bind(this);
         this.selecionarLojaId = this.selecionarLojaId.bind(this);
@@ -70,6 +71,18 @@ export default class Loja extends Component {
             window.location.href = "http://localhost/#/login"
         }
         return;
+    }
+
+    timeMessage(){
+        setTimeout(function(){ 
+            this.setState({
+                ...this.state,
+                alertError: false,
+                alertSuccess: false,
+                messageSuccess: '',
+                messageError: ''
+            });
+        }.bind(this), 5000);
     }
 
     digitarPesquisa(e) {
@@ -198,6 +211,7 @@ export default class Loja extends Component {
                             messageError: '',
                         });
                         this.refresh(this.state.pesquisar);
+                        this.timeMessage();
                     }
                 })
                 .catch(e => {
@@ -208,6 +222,7 @@ export default class Loja extends Component {
                         messageSuccess: '',
                         messageError: e.response.data.data.message
                     });
+                    this.timeMessage();
                 });
         });
     }
@@ -236,6 +251,7 @@ export default class Loja extends Component {
                             messageError: '',
                         });
                         this.refresh(this.state.pesquisar);
+                        this.timeMessage();
                     })
                     .catch(e => {
                         this.setState({
@@ -255,6 +271,7 @@ export default class Loja extends Component {
                     messageSuccess: '',
                     messageError: e.response.data.data.message
                 })
+                this.timeMessage();
             });
     }
 
@@ -311,6 +328,7 @@ export default class Loja extends Component {
                     messageSuccess: res.data.data.message,
                     messageError: '',
                 });
+                this.timeMessage();
             })
             .catch(e => {
                 this.setState({
@@ -319,7 +337,8 @@ export default class Loja extends Component {
                     alertSuccess: false,
                     messageSuccess: '',
                     messageError: e.response.data.data.message
-                })
+                });
+                this.timeMessage();
             })
         }).catch(e => {
             this.setState({
@@ -328,8 +347,9 @@ export default class Loja extends Component {
                 alertSuccess: false,
                 messageSuccess: '',
                 messageError: e.response.data.data.message
-            })
-        })
+            });
+            this.timeMessage();
+        });
     }
 
     limparFormulario() {
