@@ -46,9 +46,10 @@ Acessar a pasta **BACKEND** e com o prompt de comando executar: <br />
 **npm run production** _para executar o servidor em ambiende de produção_ <br />
 
 4. **Testes unitários:** <br />
-**npm testl** _aguardar o resultado ser concluído_ <br />
-**OBS** _é necessário gerar um TOKEN e colocar na variável TOKEN (tinha 15)_ <br />
+**npm test** _aguardar o resultado ser concluído_ <br />
+**OBS** _é necessário gerar um TOKEN e colocar na variável TOKEN (tinha 15) ou comentar toda a validação de token <br />
  _Caminho: /backend/src/teste/teste.js_ <br /> <br />
+ _Caminho validação de token: /backend/src/bin/configApp.js - **Da linha 32 até a 38 **_  <br /> <br />
 
 ---
 ### License
