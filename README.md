@@ -47,11 +47,15 @@ Acessar a pasta **BACKEND** e com o prompt de comando executar: <br />
 
 4. **Testes unitários:** <br />
 **npm test** _aguardar o resultado ser concluído_ <br />
-**OBS** _é necessário gerar um TOKEN e colocar na variável TOKEN (tinha 15) ou comentar toda a validação de token_ <br />
+**OBS** _é necessário gerar um TOKEN e colocar na variável TOKEN (linha 15) ou comentar toda a validação de token_ <br />
  _Caminho: /backend/src/teste/teste.js_ <br /> <br />
- _Caminho validação de token: /backend/src/bin/configApp.js - **Da linha 32 até a 38 **_  <br /> <br />
+ _Caminho validação de token: /backend/src/bin/configApp.js - **Da linha 32 até a 38 ** _  <br /> <br />
 
 ---
+5. **Pstman Documenter** <br />
+Foi criado um arquivo que contém todos os meus registros no Postman, acredito que poderá ajudar a realizar alguns testes. <br />
+LINK: https://documenter.getpostman.com/view/2974492/ml-finder/7EEdYkF <br />
+--- 
 ### License
 Copyright (c) 2017 Cleber R. Spirlandeli (contato.cleberrezende@gmail.com)
 
