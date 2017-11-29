@@ -45,6 +45,11 @@ Acessar a pasta **BACKEND** e com o prompt de comando executar: <br />
 **npm run dev** _para executar o servidor em ambiende de desenvolvimento_ <br />
 **npm run production** _para executar o servidor em ambiende de produção_ <br />
 
+4. **Testes unitários:** <br />
+**npm testl** _aguardar o resultado ser concluído_ <br />
+**OBS** _é necessário gerar um TOKEN e colocar na variável TOKEN (tinha 15)_ <br />
+ _Caminho: /backend/src/teste/teste.js_ <br /> <br />
+
 ---
 ### License
 Copyright (c) 2017 Cleber R. Spirlandeli (contato.cleberrezende@gmail.com)
