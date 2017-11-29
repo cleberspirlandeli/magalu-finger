@@ -42,8 +42,8 @@ Acessar a pasta **BACKEND** e com o prompt de comando executar: <br />
 
 3. **Após executar o servidor Node JS, entre na pasta FRONTEND e executar:** <br />
 **npm install** _aguardar o download ser concluído_ <br />
-**npm rum dev** _para executar o servidor em ambiende de desenvolvimento_ <br />
-**npm rum production** _para executar o servidor em ambiende de produção_ <br />
+**npm run dev** _para executar o servidor em ambiende de desenvolvimento_ <br />
+**npm run production** _para executar o servidor em ambiende de produção_ <br />
 
 ---
 ### License
