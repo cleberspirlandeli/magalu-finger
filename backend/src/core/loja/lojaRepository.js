@@ -25,30 +25,29 @@ async function inserirLoja(params) {
             params.estado
         ]
     );
-
     var result = res.rows[0].inserirloja;
     return result;
 }
 
 async function listarLoja(params) {
-    const res = await pg.query("SELECT * FROM PUBLIC.LISTARLOJA($1);",
+    const res = await pg.query("SELECT * FROM PUBLIC.LISTARLOJA($1, $2);",
         [
-            params.idLoja
+            params.idLoja,
+            params.pesquisar
         ]
     );
-
     var result = res.rows;
     return result;
 }
 
 async function excluirLoja(params) {
-    const res = await pg.query("SELECT * FROM PUBLIC.EXCLUIRCOLABORADOR($1, $2);",
+    const res = await pg.query("SELECT * FROM PUBLIC.EXCLUIRLOJA($1, $2);",
         [
             params.idAlteracao,
-            params.idColaborador
+            params.idLoja
         ]
     );
-    var result = res.rows[0].excluircolaborador;
+    var result = res.rows[0].excluirloja;
     return result;
 }
 
@@ -65,7 +64,6 @@ async function alterarLoja(params) {
             params.ativo
         ]
     );
-
     var result = res.rows[0].alterarloja;
     return result;
 }

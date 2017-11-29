@@ -13,10 +13,32 @@ export default props => {
         }
     }
 
+    const alertsMessages = (props) => {
+        if (props.alertError) {
+            return <div
+                className="alert alert-danger col-sm-10 col-md-12"
+                role="alert"
+                hide={props.editar}
+            >{props.messageError}</div>
+        } else if (props.alertSuccess) {
+            return <div
+                className="alert alert-success col-sm-10 col-md-12"
+                role="alert"
+                hide={props.alertSuccess}
+            >{props.messageSuccess}</div>
+        }
+    }
+
     return (
         <div role="form" className="margin-bottom">
             <hr />
             <p className="cadastrar-cliente">Cadastrar Loja</p>
+
+            <div>
+                {alertsMessages(props)}
+            </div>
+
+
             <Grid cols="12 9 10">
                 <fieldset disabled>
                     <input
@@ -91,13 +113,13 @@ export default props => {
                     <IconButton
                         style="primary"
                         icon="plus"
-                        onClick={props.adicionarColaborador}
+                        onClick={props.adicionarLoja}
                         hide={props.editar}
                     />
                     <IconButton
                         style="primary"
                         icon="check"
-                        onClick={() => props.editarColaborador()}
+                        onClick={() => props.editarLoja()}
                         hide={!props.editar}
                     />
                     <IconButton

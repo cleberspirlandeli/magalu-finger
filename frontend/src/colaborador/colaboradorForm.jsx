@@ -13,10 +13,31 @@ export default props => {
         }
     }
 
+    const alertsMessages = (props) => {
+        if (props.alertError) {
+            return <div
+                        className="alert alert-danger col-sm-10 col-md-12"
+                        role="alert"
+                        hide={props.alertError}
+                    >{props.messageError}</div>
+        } else if(props.alertSuccess){
+            return <div
+                        className="alert alert-success col-sm-10 col-md-12"
+                        role="alert"
+                        hide={props.alertSuccess}
+                    >{props.messageSuccess}</div>
+        }
+    }
+
     return (
         <div role="form" className="margin-bottom">
             <hr />
             <p className="cadastrar-cliente">Cadastrar Colaborador</p>
+
+            <div>
+                {alertsMessages(props)}
+            </div>
+
             <Grid cols="12 9 10">
                 <fieldset disabled>
                     <input
@@ -51,22 +72,22 @@ export default props => {
                 </Grid>
                 <Grid cols="12 4 2">
                     <div className="input-group">
-                        <input 
-                            type="text" 
-                            id="tipoColabarador" 
-                            className="form-control cursor-pointer" 
-                            disabled 
+                        <input
+                            type="text"
+                            id="tipoColabarador"
+                            className="form-control cursor-pointer"
+                            disabled
                             value={props.tipoColaborador}
                             onChange={props.digitarTipo}
                         />
 
                         <div className="input-group-btn">
-                            <button type="button" 
-                                    className="btn dropdown-toggle" 
-                                    data-toggle="dropdown">
+                            <button type="button"
+                                className="btn dropdown-toggle"
+                                data-toggle="dropdown">
                                 <span className="caret"></span>
                             </button>
-                            <ul id="listaTipoColaborador" 
+                            <ul id="listaTipoColaborador"
                                 className="dropdown-menu">
                                 <li><a>Vendedor</a></li>
                                 <li><a>Gestor</a></li>

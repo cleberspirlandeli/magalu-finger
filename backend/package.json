@@ -1,11 +1,12 @@
 {
-  "name": "Magalu Finder",
+  "name": "magalufinder",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon",
-    "producao": "pm2 start app.js --name magalu-finder"
+    "dev": "set NODE_ENV=dev && node app",
+    "producao": "set NODE_ENV=production && pm2 start app.js --name magalu-finder",
+    "test": "mocha"
   },
   "keywords": [],
   "author": "Cleber Rezende Spirlandeli",
@@ -16,14 +17,17 @@
   "devDependencies": {
     "async": "^2.6.0",
     "body-parser": "^1.18.2",
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
     "cookie-parser": "^1.4.3",
     "debug": "^3.1.0",
     "jsonwebtoken": "^8.1.0",
+    "mocha": "^4.0.1",
     "morgan": "^1.9.0",
+    "nodemailer": "^4.4.0",
     "nodemon": "^1.12.1",
     "pg": "^7.4.0",
     "pm2": "^2.7.2",
-    "request": "^2.83.0", /* remover */
     "serve-favicon": "^2.4.5"
   }
 }

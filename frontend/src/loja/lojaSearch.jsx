@@ -7,7 +7,7 @@ export default props => {
 
     const keyHandler = (e) =>{
         if (e.key === 'Enter') {
-            props.pesquisarColaborador();
+            props.pesquisarLoja();
         }else if (e.key === 'Escape') {
             props.limparCampoPesquisa();
         }
@@ -33,7 +33,7 @@ export default props => {
                 <IconButton
                     style="info"
                     icon="search"
-                    onClick={props.pesquisarColaborador}
+                    onClick={props.pesquisarLoja}
                 />
                 <IconButton
                     style="default"

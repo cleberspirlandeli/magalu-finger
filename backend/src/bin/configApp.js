@@ -18,20 +18,22 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.all('*', function (req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
-    next();
+app.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', "*");
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Authorization, X-Requested-With,Content-Type');
+    if (req.method === 'OPTIONS') {
+        res.end();
+    } else {
+        next();
+    }
 });
 
 app.all('/api/*', function (req, res, next) {
-    // console.error(' ===== TODAS AS ROTAS ===== ');
-    if (req.method !== 'GET' && !req._body) {
-        res.clearCookie('token');
-        res.status(401).json({ success: false, data: { menssage: 'Sessão inválida. Por favor, efetue login novamente.' } }).end(); // renderizar para a tela de login
-    } else {
+    if (req.method !== 'OPTIONS') {
         Login.validarToken(req, res, next);
+    }else{
+        res.end();
     }
 });
 

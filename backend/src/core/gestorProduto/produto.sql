@@ -20,8 +20,7 @@ Ex................:
                     SELECT * FROM PUBLIC.LISTARPRODUTO(null);
                     SELECT * FROM PUBLIC.LISTARPRODUTO('MjAxNy0xMS0yNSAwMF4qXzRfJCU=');
 */
-DECLARE
-    vIdProduto         INTEGER = public.dekryptosgraphein(pIdProduto);
+DECLARE vIdProduto         INTEGER = public.dekryptosgraphein(pIdProduto);
 
 BEGIN
 
@@ -106,10 +105,10 @@ BEGIN
     THEN
 
         IF pQuantidade > 10     -- Regra implementada somente para exemplo de várias validações
-        THEN                -- 25/11/2017 - Cleber Rezende - solicitado por Fulano*
+        THEN                -- 25/11/2017 - Cleber Rezende
 
             INSERT INTO Public.Produto (
-                idColaborador,
+                idProduto,
                 descricao,
                 codigoProduto,
                 valorVenda,
@@ -133,7 +132,7 @@ BEGIN
             json_build_object(
                 'success', true,
                 'message', 'Produto cadastrado com sucesso.',
-                'idLoja', public.kryptosGraphein(vReturningId)
+                'idProduto', public.kryptosGraphein(vReturningId)
             );
 
         ELSE
@@ -141,7 +140,7 @@ BEGIN
                 json_build_object(
                     'success', false,
                     'message', 'A quantidade do produto deve ser maior que 10 (dez).',
-                    'idLoja', '0'
+                    'idProduto', '0'
                 );
         END IF;
         
@@ -150,7 +149,7 @@ BEGIN
             json_build_object(
                 'success', false,
                 'message', 'Somente Gestores podem realizar novos cadastros.',
-                'idLoja', '0'
+                'idProduto', '0'
             );
     END IF;
 
@@ -225,7 +224,7 @@ BEGIN
         json_build_object(
             'success', true,
             'message', 'Produto excluído com sucesso.',
-            'idColaborador', pIdProduto
+            'idProduto', pIdProduto
         );
 
     ELSE
@@ -233,7 +232,7 @@ BEGIN
         json_build_object(
             'success', false,
             'message', 'Somente Gestores podem realizar a exclusão.',
-            'idColaborador', pIdProduto
+            'idProduto', pIdProduto
         );
     END IF;
     
@@ -314,7 +313,7 @@ BEGIN
             json_build_object(
                 'success', false,
                 'message', 'Quantidade em estoque do produto é menor do que a quantidade que se deseja comprar.',
-                'idColaborador', pIdProduto
+                'idProduto', pIdProduto
             );
         ELSEIF (vQuantidade - pQuantidade) = 0 THEN     -- Regra somente para exemplo de uma possível validação
             pAtivo = 'N';
@@ -336,7 +335,7 @@ BEGIN
         json_build_object(
             'success', true,
             'message', 'Produto alterado com sucesso.',
-            'idColaborador', pIdProduto
+            'idProduto', pIdProduto
         );
 
     ELSE
@@ -344,7 +343,7 @@ BEGIN
         json_build_object(
             'success', false,
             'message', 'Somente Gestores podem realizar alteração.',
-            'idColaborador', pIdProduto
+            'idProduto', pIdProduto
         );
     END IF;
     

@@ -34,9 +34,9 @@ export default props => {
             <table className="table padding-top">
                 <thead>
                     <tr>
-                        <td>Nome</td>
-                        <td>Tipo</td>
-                        <td>Ativo</td>
+                        <td><b>Nome </b></td>
+                        <td><b>Tipo </b></td>
+                        <td><b>Ativo </b></td>
                         <td className="tableActions">Ações</td>
                     </tr>
                 </thead>

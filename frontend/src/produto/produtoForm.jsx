@@ -13,10 +13,31 @@ export default props => {
         }
     }
 
+    const alertsMessages = (props) => {
+        if (props.alertError) {
+            return <div
+                className="alert alert-danger col-sm-10 col-md-12"
+                role="alert"
+                hide={props.alertError}
+            >{props.messageError}</div>
+        } else if (props.alertSuccess) {
+            return <div
+                className="alert alert-success col-sm-10 col-md-12"
+                role="alert"
+                hide={props.alertSuccess}
+            >{props.messageSuccess}</div>
+        }
+    }
+
     return (
         <div role="form" className="margin-bottom">
             <hr />
             <p className="cadastrar-cliente">Cadastrar Loja</p>
+
+            <div>
+                {alertsMessages(props)}
+            </div>
+
             <Grid cols="12 9 10">
                 <fieldset disabled>
                     <input
@@ -61,7 +82,7 @@ export default props => {
                             id="valorVendaProduto"
                             className="form-control"
                             placeholder="00,00"
-                            pattern="[0-9]+([\,.][0-9]+)?" 
+                            pattern="[0-9]+([\,.][0-9]+)?"
                             step="0.01"
                             value={props.valorVendaProduto}
                             onChange={props.digitarValor}

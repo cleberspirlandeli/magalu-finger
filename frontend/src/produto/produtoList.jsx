@@ -12,6 +12,8 @@ export default props => {
                     <td>{produto.codigoProduto}</td>
                     <td>{produto.valorVenda}</td>
                     <td>{produto.quantidade}</td>
+                    <td>{produto.quantidadeDescricao}</td>
+                    <td>{produto.datacadastro}</td>
                     <td>
                         <IconButton
                             style="warning"
@@ -39,6 +41,8 @@ export default props => {
                         <td><b>Código</b></td>
                         <td><b>Preço Venda</b></td>
                         <td><b>Quantidade</b></td>
+                        <td><b>Descrição</b></td>
+                        <td><b>datacadastro</b></td>
                         <td className="tableActions"><b>Ações</b></td>
                     </tr>
                 </thead>

@@ -4,3 +4,4 @@
 
 
 module.exports = "postgres://postgres:12345678@localhost:5432/testedb";
+// module.exports = "postgres://postgres:12345678@localhost:5432/magalu";

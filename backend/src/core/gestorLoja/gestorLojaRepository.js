@@ -28,9 +28,10 @@ async function inserirColaborador(params) {
 }
 
 async function listarColaborador(params) {
-    const res = await pg.query("SELECT * FROM PUBLIC.LISTARCOLABORADOR($1);",
+    const res = await pg.query("SELECT * FROM PUBLIC.LISTARCOLABORADOR($1, $2);",
         [
-            params.idColaborador
+            params.idColaborador,
+            params.pesquisar
         ]
     );
 

@@ -39,7 +39,7 @@ async function inserirProduto(params) {
     valParams.isRequired(params.valorVenda, 'O preço de venda do produto é obrigatório');
     valParams.isNumber(params.valorVenda, 'O preço de venda do produto deve ser um número');
     valParams.isMinLen(params.valorVenda, 2, 'O preço de venda do produto deve ser maior que 2 (dois)');
-    valParams.isMaxLen(params.valorVenda, 10, 'O preço de venda do produto deve ser menor que 10 (dez)');
+    // valParams.isMaxLen(params.valorVenda, 10, 'O preço de venda do produto deve ser menor que 10 (dez)');
 
     // Quantidade Produto
     valParams.isRequired(params.quantidade, 'A quantidade do produto é obrigatório');
@@ -49,7 +49,9 @@ async function inserirProduto(params) {
 
     // Se os dados forem inválidos
     if (!valParams.isValid()) {
-        params.valorVenda = params.valorVenda.replace('.', ',');
+        //var valor = params.valorVenda;
+        //params.valorVenda = valor.replace('.',',');
+        // params.valorVenda = params.valorVenda.replace('.', ',');
         return { success: false, httpCode: 400, message: valParams.errors() }
     } else {
         return { success: true, httpCode: 200, message: null }

@@ -10,7 +10,7 @@ import LoginValidar from './loginValidar.jsx';
 // import LojaForm from './lojaForm.jsx';
 // import LojaList from './lojaList.jsx';
 
-const URL = 'http://localhost:3000/api/login';
+const URL = 'http://localhost:3000/login';
 
 
 export default class Login extends Component {
@@ -18,8 +18,8 @@ export default class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            usuario: '',
-            senha: ''
+            usuario: 'admin',
+            senha: '123456'
         }
 
         // CAMPOS INPUT
@@ -36,22 +36,41 @@ export default class Login extends Component {
     digitarSenha(e) {
         this.setState({ ...this.state, senha: e.target.value });
     }
-    validarUsuario(){
+    validarUsuario() {
         // console.log('Usuario..: ', this.state.usuario);
         // console.log('Senha....: ', this.state.senha);
 
-        const Usuario ={
+        const Usuario = {
             usuario: this.state.usuario,
             senha: this.state.senha
         }
+        axios({
+            method: 'OPTIONS',
+            url: URL
+        }).then(res => {
+            axios.post(URL, Usuario)
+                .then(res => {
+                    console.log(res.data);
+                    if (res.data.success == true) {
+                        var expires = "";
+                        var date = new Date();
+                        date.setTime(date.getTime() + (24 * 60 * 60 * 1000));
+                        expires = "; expires=" + date.toUTCString();
 
-        axios.post(URL, Usuario)
-        .then(res => {
-            if (res.data.httpCode === 201) {
-                console.log('Receber Cookie e pegar id: ' + res);
-            }
-        }
-        ).catch(e => console.log('Login erro ' , e));
+                        document.cookie = `token=token:${res.data.token}${expires}; path=/`;
+                        document.cookie = `session=${res.data.id}${expires}; path=/`;
+                        setTimeout(function() { 
+                            window.location.href = "http://localhost/#/colaborador";
+                        }, 1000);
+                    }
+                })
+                .catch(e => {
+                    console.log(e);   
+                });
+        })
+        .catch(e => {
+            console.log(e);   
+        });
     }
 
     render() {
@@ -70,27 +89,3 @@ export default class Login extends Component {
         );
     }
 }
-
-/* 
-
-<div className="navbar navbar-inverse bg-inverse ">
-                    <div className="container">
-                        <div className="navbar-header">
-                            <a href="" className="navbar-brand">
-                                <i className="fa fa-calendar-check-o"></i> Magalu Finder
-                            </a>
-                        </div>
-
-                        <Grid cols="12 4 4">
-                            <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                <div className="form-group">
-                                    <input type="text" className="form-control" placeholder="Search" />
-                                </div>
-                                <button type="submit" className="btn btn-default">Submit</button>
-                            </div>
-                        </Grid>
-
-                    </div>
-                </div>
-
-*/

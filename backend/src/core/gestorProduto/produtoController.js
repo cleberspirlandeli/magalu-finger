@@ -18,9 +18,9 @@ async function inserirProduto(req, res) {
     const params = {
         idInsercao: req.params.idinsercao ? req.params.idinsercao : null,
         descricao: req.body.descricao ? req.body.descricao : null,
-        codigoProduto: req.body.codigoProduto ? req.body.codigoProduto : null,
-        valorVenda: req.body.valorVenda ? parseInt(req.body.valorVenda) : null,
-        quantidade: req.body.quantidade ? req.body.quantidade : null
+        codigoProduto: req.body.codigoProduto ? parseInt(req.body.codigoProduto) : null,
+        valorVenda: req.body.valorVenda ? parseFloat(req.body.valorVenda) : null,
+        quantidade: req.body.quantidade ? parseInt(req.body.quantidade) : null
     };
 
     try {
@@ -56,7 +56,7 @@ async function inserirProduto(req, res) {
             httpCode: 500,
             data: {
                 success: false,
-                message: e
+                message: e.message
             }
         }
         );
@@ -95,7 +95,7 @@ async function listarProduto(req, res) {
     } catch (e) {
         if (e.message === 'invalid base64 end sequence' ||
             e.message.includes('invalid input syntax for integer'))
-            e = 'O identificado do colaborador é inválido ou expirou.';
+            e = 'Sua sessão expirou por inatividade. Por favor, efetue login novamente.';
 
         res.status(500).json({
             httpCode: 500,
@@ -140,7 +140,7 @@ async function excluirProduto(req, res) {
         }
     } catch (e) {
         if (e.message === 'invalid base64 end sequence')
-            e = 'O identificado do colaborador é inválido ou expirou.';
+            e = 'Sua sessão expirou por inatividade. Por favor, efetue login novamente.';
 
         res.status(500).json({
             httpCode: 500,
@@ -190,7 +190,7 @@ async function alterarProduto(req, res) {
         }
     } catch (e) {
         if (e.message === 'invalid base64 end sequence')
-            e = 'O identificado do colaborador é inválido ou expirou.';
+            e = 'Sua sessão expirou por inatividade. Por favor, efetue login novamente.';
 
         res.status(500).json({
             httpCode: 500,

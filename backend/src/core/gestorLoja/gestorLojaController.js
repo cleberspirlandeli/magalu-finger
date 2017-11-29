@@ -6,6 +6,8 @@
 const ColaboradorValidation = require('./gestorLojaValidation.js');
 const ColaboradorRepository = require('./gestorLojaRepository.js');
 
+const SendMail = require('./../../util/sendmail/sendmail.js')
+
 module.exports = {
     inserirColaborador,
     listarColaborador,
@@ -62,7 +64,7 @@ async function listarColaborador(req, res) {
 
     const params = {
         idColaborador: req.params.id ? req.params.id : null,
-        pesquisar: req.params.q ?req.params.q : null
+        pesquisar: req.query.q ?req.query.q : null
     };
 
     try {
@@ -90,7 +92,7 @@ async function listarColaborador(req, res) {
         }
     } catch (e) {
         if (e.message === 'invalid base64 end sequence') 
-            e = 'O identificado do colaborador é inválido ou expirou.';
+            e = 'Sua sessão expirou por inatividade. Por favor, efetue login novamente.';
         
         res.status(500).json({
             httpCode: 500,
@@ -106,8 +108,8 @@ async function listarColaborador(req, res) {
 async function excluirColaborador(req, res) {
 
     const params = {
-        idAlteracao: req.params.idalteracao ? req.params.idalteracao : null,
-        idColaborador: req.params.idcolaborador ? req.params.idcolaborador : null
+        idAlteracao: req.params.idalteracao ? String(req.params.idalteracao) : null,
+        idColaborador: req.params.idcolaborador ? String(req.params.idcolaborador) : null
     };
 
     try {
@@ -115,11 +117,13 @@ async function excluirColaborador(req, res) {
         if (resValidation.success) {
             const resRepository = await ColaboradorRepository.excluirColaborador(params);
 
-            if (resRepository.success)
-                res.status(200).json({ httpCode: 200, data: resRepository });
-            else
-                res.status(403).json({ httpCode: 403, data: resRepository });
-
+            if (resRepository.success){
+                res.status(200).json({ httpCode: 200, data: resRepository }).end();
+            }
+            else{
+                res.status(403).json({ httpCode: 403, data: resRepository }).end();
+            }
+            await SendMail.sendmail(params);
         } else {
             res.status(resValidation.httpCode)
                 .json({
@@ -133,7 +137,7 @@ async function excluirColaborador(req, res) {
         }
     } catch (e) {
         if (e.message === 'invalid base64 end sequence') 
-            e = 'O identificado do colaborador é inválido ou expirou.';
+            e = 'Sua sessão expirou por inatividade. Por favor, efetue login novamente.';
         
         res.status(500).json({
             httpCode: 500,
@@ -180,7 +184,7 @@ async function alterarColaborador(req, res) {
             }
         } catch (e) {
             if (e.message === 'invalid base64 end sequence') 
-                e = 'O identificado do colaborador é inválido ou expirou.';
+                e = 'Sua sessão expirou por inatividade. Por favor, efetue login novamente.';
             
             res.status(500).json({
                 httpCode: 500,

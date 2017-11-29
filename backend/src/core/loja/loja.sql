@@ -1,5 +1,8 @@
 -- -----------------------------------------------------------------------------------------------------------
-CREATE OR REPLACE FUNCTION PUBLIC.LISTARLOJA(pIdLoja VARCHAR)
+CREATE OR REPLACE FUNCTION PUBLIC.LISTARLOJA(
+    pIdLoja         VARCHAR,
+    pPesquisar		VARCHAR
+)
   RETURNS TABLE(
     "id"    	        VARCHAR(200),
     "descricao"	        PUBLIC.LOJA.DESCRICAO%TYPE,
@@ -16,9 +19,11 @@ Objetivo..........: Listar todas as lojas ou uma loja em específico
 Autor.............: Cleber Spirlandeli
 Data..............: 24/11/2017
 Ex................:
-                    SELECT * FROM PUBLIC.LISTARLOJA(null);
-                    SELECT * FROM PUBLIC.LISTARLOJA('MjAxNy0xMS0yMiAyM14qXzEwXyQl');
+                    SELECT * FROM PUBLIC.LISTARLOJA(null, null);
+                    SELECT * FROM PUBLIC.LISTARLOJA('MjAxNy0xMS0yMiAyM14qXzEwXyQl', null);
+                    SELECT * FROM PUBLIC.LISTARLOJA(null, 'Magazine');
 */
+DECLARE     vIdLoja                 INTEGER = public.dekryptosgraphein(pIdLoja);
 
 BEGIN
 
@@ -37,7 +42,18 @@ BEGIN
     AND
         CASE 
             WHEN pIdLoja IS NOT NULL THEN
-                l.id = public.dekryptosgraphein(pIdLoja) :: INTEGER
+                l.id = vIdLoja
+            ELSE
+                TRUE
+            END
+    AND
+        CASE 
+            WHEN pPesquisar IS NOT NULL THEN
+                UPPER(l.descricao) LIKE UPPER('%' || pPesquisar || '%')
+                OR
+                CAST(l.codigofilial AS TEXT) LIKE '%' || pPesquisar || '%'
+                OR
+                CAST(l.cep AS TEXT) LIKE '%' || pPesquisar || '%'
             ELSE
                 TRUE
             END;

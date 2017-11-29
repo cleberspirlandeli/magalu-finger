@@ -47,7 +47,7 @@ async function inserirLoja(req, res) {
         }
     } catch (e) {
         if (e.message.includes(`Cannot read property 'length' of null`)) 
-            e = 'Há campo em branco e/ou não preenchido.'
+            e = 'Há campo obrigatório em branco e/ou não preenchido.'
         
         res.status(500).json({
             httpCode: 500,
@@ -63,7 +63,8 @@ async function inserirLoja(req, res) {
 async function listarLoja(req, res) {
 
     const params = {
-        idLoja: req.params.idloja ? req.params.idloja : null
+        idLoja: req.params.idloja ? req.params.idloja : null,
+        pesquisar: req.query.q ?req.query.q : null
     };
 
     try {
@@ -136,7 +137,7 @@ async function excluirLoja(req, res) {
         }
     } catch (e) {
         if (e.message === 'invalid base64 end sequence') 
-            e = 'O identificado do colaborador é inválido ou expirou.';
+            e = 'Sua sessão expirou por inatividade. Por favor, efetue login novamente.';
         
         res.status(500).json({
             httpCode: 500,
@@ -155,7 +156,7 @@ async function alterarLoja(req, res) {
             idAlteracao: req.params.idalteracao ? req.params.idalteracao : null,
             idLoja: req.params.idloja ? req.params.idloja : null,
             descricao: req.body.descricao ? req.body.descricao : null,
-            codigoFilial: req.body.codigoFilial ? req.body.codigoFilial : null,
+            codigoFilial: req.body.codigoFilial ? parseInt(req.body.codigoFilial) : null,
             cep: req.body.cep ? req.body.cep : null,
             cidade: req.body.cidade ? req.body.cidade : null,
             estado: req.body.estado ? req.body.estado : null,
@@ -185,7 +186,7 @@ async function alterarLoja(req, res) {
             }
         } catch (e) {
             if (e.message === 'invalid base64 end sequence') 
-                e = 'O identificado do colaborador é inválido ou expirou.';
+                e = 'Sua sessão expirou por inatividade. Por favor, efetue login novamente.';
             
             res.status(500).json({
                 httpCode: 500,

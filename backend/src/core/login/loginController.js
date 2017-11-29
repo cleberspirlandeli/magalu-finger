@@ -63,7 +63,7 @@ function login(req, res) {
             } else {
                 res.clearCookie('token');
                 res.cookie('token', result.token, { maxAge: 60000, httpOnly: true });
-                res.status(httpCode).json({ success: true, toke: result.token });
+                res.status(httpCode).json({ success: true, id: result.id, token: result.token });
             }
         });
     }
@@ -93,12 +93,11 @@ function validarToken(req, res, next) {
         }
     ], (err, result) => {
         if (err) {
-            res.clearCookie('token');
-            res.status(401).json(result);
-            res.redirect('/login').end();
+            res.status(401)
+                .json(result);
         } else {
-            res.clearCookie('token');
-            res.cookie('token', result.data.token, { maxAge: 60000, httpOnly: true });
+            res.clearCookie('token')
+                .cookie('token', result.data.token, { maxAge: 60000, httpOnly: true });
             next();
         }
     });

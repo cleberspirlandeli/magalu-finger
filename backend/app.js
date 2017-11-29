@@ -3,6 +3,6 @@
  */
 'use strict';
 
-const server = require('./src/bin/server.js');
+const app = require('./src/bin/server.js');
 
-server();
+module.exports = app();

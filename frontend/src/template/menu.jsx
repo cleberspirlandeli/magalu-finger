@@ -6,7 +6,7 @@ export default props => (
         <div className="container">
             <div className="navbar-header">
                 <a href="" className="navbar-brand">
-                    <i className="fa fa-calendar-check-o"></i> Magalu Finder 
+                    <i className="fa fa-calendar-check-o"></i> Magalu Finder
                 </a>
             </div>
 

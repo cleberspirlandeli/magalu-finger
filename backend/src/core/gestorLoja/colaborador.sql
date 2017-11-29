@@ -1,5 +1,8 @@
 -- -----------------------------------------------------------------------------------------------------------
-CREATE OR REPLACE FUNCTION PUBLIC.LISTARCOLABORADOR(pIdColaborador VARCHAR)
+CREATE OR REPLACE FUNCTION PUBLIC.LISTARCOLABORADOR(
+    pIdColaborador 	VARCHAR,
+	pPesquisar		VARCHAR
+)
   RETURNS TABLE(
     "id"    	VARCHAR(200),
     "nome"  	PUBLIC.COLABORADOR.NOME%TYPE,
@@ -11,13 +14,16 @@ CREATE OR REPLACE FUNCTION PUBLIC.LISTARCOLABORADOR(pIdColaborador VARCHAR)
 /*
 Documentação
 Arquivo Fonte.....: laboratorio.sql
-Objetivo..........: Listar todos os laboratórios ou um especifico
+Objetivo..........: Listar todos os colaboradores ou um especifico
 Autor.............: Cleber Spirlandeli
 Data..............: 22/11/2017
 Ex................:
-                    SELECT * FROM PUBLIC.LISTARCOLABORADOR(null);
-                    SELECT * FROM PUBLIC.LISTARCOLABORADOR('MjAxNy0xMS0yMiAyM14qXzEwXyQl');
+                    SELECT * FROM PUBLIC.LISTARCOLABORADOR(null, null);
+                    SELECT * FROM PUBLIC.LISTARCOLABORADOR('MjAxNy0xMS0yOCAxN14qXzE1Ml8kJQ==', null);
+                    SELECT * FROM PUBLIC.LISTARCOLABORADOR(null, 'TeSt');
 */
+
+DECLARE     vIdColaborador                 INTEGER = public.dekryptosgraphein(pIdColaborador);
 
 BEGIN
 
@@ -34,7 +40,16 @@ BEGIN
     AND
         CASE 
             WHEN pIdColaborador IS NOT NULL THEN
-                c.id = public.dekryptosgraphein(pIdColaborador) :: INTEGER
+                c.id = vIdColaborador
+            ELSE
+                TRUE
+            END
+    AND
+        CASE 
+            WHEN pPesquisar IS NOT NULL THEN
+                UPPER(c.nome) LIKE UPPER('%' || pPesquisar || '%')
+                OR
+                UPPER(c.tipo) LIKE UPPER('%' || pPesquisar || '%')
             ELSE
                 TRUE
             END;
@@ -138,8 +153,8 @@ Autor.............: Cleber Spirlandeli
 Data..............: 24/11/2017
 Ex................:
                     SELECT * FROM PUBLIC.EXCLUIRCOLABORADOR(
-                                                            'MjAxNy0xMS0yNCAxN14qXzIwXyQl',
-                                                            'MjAxNy0xMS0yNCAxN14qXzM1XyQl'
+                                                            'MjAxNy0xMS0yNyAxOV4qXzY1XyQl',
+                                                            'MjAxNy0xMS0yNyAxOV4qXzY1XyQl'
                                                             );
                                         
 */
@@ -221,8 +236,8 @@ Autor.............: Cleber Spirlandeli
 Data..............: 22/11/2017
 Ex................:
                     SELECT * FROM PUBLIC.ALTERARCOLABORADOR(
-                                                            'MjAxNy0xMS0yNCAxN14qXzIwXyQl',
-                                                            'MjAxNy0xMS0yNCAxN14qXzM1XyQl',
+                                                            'e10adc3949ba59abbe56e057f20f883e',
+                                                            'e10adc3949ba59abbe56e057f20f883e',
                                                             'Nome Alterado',
                                                             'Gestor',
                                                             'S',

@@ -1,5 +1,3 @@
-
-
 CREATE OR REPLACE FUNCTION public.kryptosGraphein(texto INTEGER)
   RETURNS VARCHAR AS $$
 
