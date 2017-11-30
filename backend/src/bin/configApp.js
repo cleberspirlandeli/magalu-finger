@@ -1,5 +1,5 @@
 /**
- * Created by Cleber Rezende 10/11/2017.
+ * Created by Cleber Rezende 22/11/2017.
  */
 'use strict';
 
@@ -29,6 +29,9 @@ app.use(function (req, res, next) {
     }
 });
 
+// Midleware para validar o TOKEN
+// É possível colocar um IF e verificar se a rota for a rota de login pular a validação,
+// como no exemplo do method Options
 app.all('/api/*', function (req, res, next) {
     if (req.method !== 'OPTIONS') {
         Login.validarToken(req, res, next);
