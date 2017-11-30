@@ -4,11 +4,11 @@ CREATE OR REPLACE FUNCTION public.kryptosGraphein(texto INTEGER)
 /*
 Documentação
 Arquivo Fonte.....: kryptosGraphein.sql
-Objetivo..........: Criptografar um texto ou numero
+Objetivo..........: Criptografar um número em um texto
 Autor.............: Cleber Spirlandeli
 Data..............: 22/11/2017
 Ex................:
-  SELECT * FROM Public.KryptosGraphein(99999999);
+  SELECT * FROM Public.KryptosGraphein(250);
 */
 
 DECLARE ddmmaa            VARCHAR = CURRENT_TIMESTAMP;
@@ -20,6 +20,7 @@ DECLARE ddmmaa            VARCHAR = CURRENT_TIMESTAMP;
 BEGIN
 
   -- Montando a string com outros elementos
+  -- A criptografia é montada com o Dia, Mês, Ano, Horário, Texto incrementado, Número passado e Texto incrementado
   concatenar = (dma || incrementarInicio || texto || incrementarFim) :: VARCHAR;
 
   --RAISE NOTICE 'var %', concatenar;
@@ -42,7 +43,7 @@ CREATE OR REPLACE FUNCTION public.deKryptosGraphein(texto VARCHAR)
 /*
 Documentação
 Arquivo Fonte.....: kryptosGraphein.sql
-Objetivo..........: Descriptografar um texto ou número
+Objetivo..........: Descriptografar um texto em número
 Autor.............: Cleber Spirlandeli
 Data..............: 22/11/2017
 Ex................:
@@ -60,7 +61,7 @@ BEGIN
 
   descriptografar = CONVERT_FROM(DECODE(texto, 'base64'), 'UTF-8');
 
-	--RAISE NOTICE 'var %', descriptografar;
+  --RAISE NOTICE 'var %', descriptografar;
 
   dmaDescripto = substring(descriptografar FROM 1 FOR 13);
 
@@ -68,8 +69,8 @@ BEGIN
   THEN
     -- Removendo adicionais na string
     descriptografar = SUBSTR(descriptografar, 15, char_length(descriptografar)); -- Removendo a data
-    descriptografar = TRIM(descriptografar, incrementarInicio); -- Removendo caracter x.
-    descriptografar = TRIM(descriptografar, incrementarFim); -- Removendo caracter x.
+    descriptografar = TRIM(descriptografar, incrementarInicio); -- Removendo caracter '^*_'
+    descriptografar = TRIM(descriptografar, incrementarFim); -- Removendo caracter '_$%'
 
     RETURN descriptografar :: INTEGER;
 
