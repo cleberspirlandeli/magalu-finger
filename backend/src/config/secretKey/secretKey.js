@@ -5,7 +5,7 @@ module.exports = async (params) => {
     let d = new Date();
     let dia = d.getDate(); // Dia do mês
 
-    // Segredo para se gerar o token
+    // Segredo para se gerar o token, o token é alternado de acordo com o dia do mês
     if (params === 'token') {
 
         if (dia > 0 && dia < 11) {          // De 1 a 10
