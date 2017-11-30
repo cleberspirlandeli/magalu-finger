@@ -52,7 +52,7 @@ Acessar a pasta **BACKEND** e com o prompt de comando executar: <br />
  _Caminho validação de token: /backend/src/bin/configApp.js - Da linha 32 até a 38_  <br /> <br />
 
 ---
-**Postman Documenter** <br />
+5. **Postman Documenter** <br />
 Foi criado um arquivo que contém todos os meus registros no Postman, acredito que poderá ajudar a realizar alguns testes. <br />
 LINK: https://documenter.getpostman.com/view/2974492/ml-finder/7EEdYkF <br />
 --- 
