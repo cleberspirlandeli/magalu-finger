@@ -35,6 +35,9 @@ async function login(params, callback) {
             id: params[0].id,           // Parametros para gerar o token
             tipo: params[0].tipo,       // Parametros para gerar o token
             dataSessao: new Date()      // Parametros para gerar o token
+            // também é possivel criar uma variável fixa para ser comparado na descriptografia
+            // Exemplo: server: 'Uma mensagem do servidor'
+            // Quando for a variável 'server' for descriptografado, deve conter a 'Uma mensagem do servidor'
         }
 
         let _token = jwt.sign(           // Gerar o token
@@ -78,6 +81,11 @@ async function validarToken(params, callback) {
                     // Após ser realizado a conversão do token, é possível realizar uma verificação
                     // se o cliente pode continuar com a ação ou não, por exemplo:
                     // Somente os clientes que tiverem o tipo igual a 'Gestor'
+                    // Ou também realizar válidações, por exemplo a mensagem do servidor
+                    // if (decode.server !== 'Uma mensagem do servidor' ){
+                    //     callback(true, { success: false, message: "Sessão inválida. Por favor, efetue login novamente." });
+                    // }
+                    
                     let message = {
                         success: true,
                         conteudo: {
@@ -107,7 +115,7 @@ async function refreshToken(decode, callback) {
     if (!decode.success) {
         callback(true, { success: false, message: "Sessão inválida. Por favor, efetue login novamente." });
     } else {
-
+                
         // Segredo para se gerar o token
         var chaveSecreta = await SecretKey('token');
         var password = await SecretKey('crypto');
