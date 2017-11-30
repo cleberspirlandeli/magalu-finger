@@ -10,6 +10,16 @@ const server = require('./../src/bin/configApp');
 chai.use(chaiHttp);
 
 const URL = '/api/';
+
+/* É necessário gerar um token antes de executar o test.js
+*  Para se gerar um token é necessário utilizar o Postman.
+*  Pasta Login >> arquivo POST - Login
+*  http://localhost:3000/login
+*  BODY: {
+*	    "usuario":"adm",
+*	    "senha":"123456"
+*  }
+*/
 const TOKEN = 'token:7d107054c91c4b2dda6b30cfd40a90d15d1811d9707320b8e2a640866447d7e709af55ee8f910b2a41b1229728eb50e13223e09207c27bac948bbe8549492ac082130a524cee110a869fb2f90aecdd00057d61d24efc766a5867b491ac5ac89d27aea5a30270be6e773da2fc7bf2b7665bf69498d3376e0b6da99f0dbf58857dafc69339fb624ac04d3016de6cfd5890fdb77c21ee08c4f5b73c10dc54a6278fbca9ace902f6a993fe96ed32291964b1c97feacbecb1cc017cd6f97d3ee2ea905041bc907cd7e6a1426510fe84e83f93e070aec62d9d0f68810baf49cdbe06f3decb05497f0a253995349297cae32a6ca93a95b6545c81e0a723cdb22d00c7b4c48534d999475867348fbd0de508b5a800429d';
 
 // ID's
@@ -30,7 +40,7 @@ describe('TESTAR: GET, POST, GET ID, PUT', function () {
         .set('Authorization', TOKEN)
         .set('Content-Type', 'application/json')
         .end(function (err, res) {
-          res.should.have.status(200);
+          res.should.have.status(200); // É necessário colocar uma condiçao para também válidar também o status 204 com um IF.
           res.should.be.json;
           res.body.should.be.a('object');
           res.body.should.have.property('httpCode');
