@@ -40,6 +40,10 @@ app.all('/api/*', function (req, res, next) {
     }
 });
 
+// É possível colocar um outro midleware para todas as requisições, que após ser realizado a resposta ao cliente
+// o midleware é chamado e insere todo o body em uma tabela de monitoramento por exemplo
+// Um banco relacional ou um banco noSql
+
 require('./../route/login.js')(app);
 require('./../route/colaborador.js')(app);
 require('./../route/loja.js')(app);
