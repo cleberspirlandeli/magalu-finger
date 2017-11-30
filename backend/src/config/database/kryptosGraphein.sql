@@ -59,7 +59,11 @@ DECLARE ddmmaa            VARCHAR = CURRENT_TIMESTAMP;
 
 BEGIN
 
-  descriptografar = CONVERT_FROM(DECODE(texto, 'base64'), 'UTF-8');
+  -- CONVERT_FROM é somente quando utilizar palavras, como se trata somente de números, 
+  -- se for utlizado poderá retornar erros.
+  -- descriptografar = CONVERT_FROM(DECODE(texto, 'base64'), 'UTF-8');
+  
+  descriptografar = DECODE(texto, 'base64');
 
   --RAISE NOTICE 'var %', descriptografar;
 
