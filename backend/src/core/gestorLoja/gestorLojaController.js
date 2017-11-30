@@ -64,7 +64,7 @@ async function inserirColaborador(req, res) {
 }
 
 async function listarColaborador(req, res) {
-
+    // Pode ser listador 
     const params = {
         idColaborador: req.params.id ? req.params.id : null,
         pesquisar: req.query.q ?req.query.q : null
@@ -126,7 +126,11 @@ async function excluirColaborador(req, res) {
             else{
                 res.status(403).json({ httpCode: 403, data: resRepository }).end();
             }
+            
+            // Enviar email para o responsável informando a exclusão e os dados de quem
+            // excluiu e quem foi o excluido
             await SendMail.sendmail(params);
+            
         } else {
             res.status(resValidation.httpCode)
                 .json({
