@@ -1,5 +1,11 @@
 /**
  * Created by Cleber Spirlandeli on 22/11/2017.
+ * 
+ * Toda validação é básicamente passado a variável a ser verificada, e uma mensagem caso for erro.
+ * Algumas validações é necessário ser informado três parametros, como por exemplo o isMin()
+ * 
+ * isMin(variável, numeroASerComparado, 'Aqui vai uma mensagem caso for erro')
+ * valParams.isRequired(variável, 'A mensagem é obrigatório');
  */
 'use strict'
 
