@@ -15,6 +15,9 @@ module.exports = {
 };
 
 async function inserirColaborador(params) {
+    
+    // Chamar a 'procedure' e se existir alguma valição, é consultado no banco e 
+    // será retornado a mensagem (json) de sucesso ou de erro explicativo.
     const res = await pg.query("SELECT * FROM PUBLIC.INSERIRCOLABORADOR($1, $2, $3);",
         [
             params.nomeColaborador,
