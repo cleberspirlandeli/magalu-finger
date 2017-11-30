@@ -75,6 +75,9 @@ async function validarToken(params, callback) {
                         callback(true, { success: false, message: "Sessão inválida. Por favor, efetue login novamente." });
                     }
                 } else {
+                    // Após ser realizado a conversão do token, é possível realizar uma verificação
+                    // se o cliente pode continuar com a ação ou não, por exemplo:
+                    // Somente os clientes que tiverem o tipo igual a 'Gestor'
                     let message = {
                         success: true,
                         conteudo: {
