@@ -16,7 +16,8 @@ module.exports = {
 };
 
 async function inserirColaborador(req, res) {
-
+    
+    // Setar os parametros recebidos pelo params, body, query
     const params = {
         nomeColaborador: req.body.nomeColaborador ? req.body.nomeColaborador : null,
         tipoColaborador: req.body.tipoColaborador ? req.body.tipoColaborador : null,
@@ -24,17 +25,19 @@ async function inserirColaborador(req, res) {
     };
 
     try {
+        // Primeiro é feito uma verificação se as variáveis recebidas são válidas.
         const resValidation = await ColaboradorValidation.inserirColaborador(params);
-        if (resValidation.success) {
+        if (resValidation.success) { // se as variáveis forem válidas
+            // Chama o banco para inserir o usuário
             const resRepository = await ColaboradorRepository.inserirColaborador(params);
 
-            if (resRepository.success)
+            if (resRepository.success) // Se o retorno do banco for true
                 res.status(201).json({ httpCode: 201, data: resRepository });
             else
                 res.status(500).json({ httpCode: 500, data: resRepository });
 
         } else {
-            res.status(resValidation.httpCode)
+            res.status(resValidation.httpCode) // httpCode é recebido da válidação
                 .json({
                     httpCode: resValidation.httpCode,
                     data: {
@@ -45,9 +48,9 @@ async function inserirColaborador(req, res) {
                 );
         }
     } catch (e) {
+        // Feito alguma verificação de exemplo para uma possível tratativa de erros.
         if (e.message.includes('colaborador" violates check constraint "colaborador_tipo')) 
             e = 'O tipo de vendedor deve ser informado corretamente.'
-        
         
         res.status(500).json({
             httpCode: 500,
