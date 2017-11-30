@@ -1,3 +1,7 @@
+/*
+* Criado para enviar email para um possível responsável inforando sobre alguma ação de um usuário
+*/
+
 const nodemailer = require('nodemailer');
 const SendMailRepository = require('./sendmailRepository.js');
 
@@ -6,7 +10,7 @@ module.exports = {
 };
 
 async function sendmail(params) {
-
+    // Criando o html que será o conteúdo do email.
     let res = await SendMailRepository.sendmail(params);
     if (res) {
         var strHtml = '<div style="display: block;margin: 0 auto;width: 620px;">';
@@ -20,18 +24,21 @@ async function sendmail(params) {
         strHtml += '</div></div></div>';
     }
     
+    // Gerando a data atual
     var dateObj = new Date();
     var day = dateObj.getUTCDate();
     var month = dateObj.getUTCMonth() + 1;
     var year = dateObj.getUTCFullYear();
     var data = `${day}/${month}/${year}`;
 
+    // Inserindo os dados do usuário no elemento html
     var html = strHtml.replace("${0}", res.alterar[0].nome)
         .replace("${1}", res.alterar[0].tipo)
         .replace("${2}", res.colaborador[0].nome)
         .replace("${3}", res.colaborador[0].tipo)
         .replace("${4}", data)
 
+    // Informações do remetente do email 
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -40,16 +47,19 @@ async function sendmail(params) {
         }
     });
     
-    //edmilson.dourado@luizalabs.com
-
+    
+    // Email de destinatário
     let mailOptions = {
         from: 'Magalu-Finder',
-        to: 'contato.spirlandeli@gmail.com',
+        to: 'contato.spirlandeli@gmail.com', //edmilson.dourado@luizalabs.com
         subject: 'Informativo Magalu Finder TI',
         text: 'Magalu-Finder',
         html: html
     };
-
+    
+    /* Válidar error ou sucess
+    *  Nesse caso não fiz nenhuma validação, mas poderia ser incrementado para em caso de erro tentar reenviar o email
+    */
     transporter.sendMail(mailOptions, function (error, info) {
         next();
     });
