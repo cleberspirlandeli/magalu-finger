@@ -20,7 +20,10 @@ let idProduto = null;
 describe('TESTAR: GET, POST, GET ID, PUT', function () {
 
   describe(' 1 - API COLABORADOR', function () {
-
+/*
+*  O teste não realiza o DELETE pois estarei utilizando o ID do colaborador para ser 
+*  utilizado como chave estrangeira na tabela Loja
+*/
     it(' 1.1 - GET: ', function (done) {
       chai.request(server)
         .get(`${URL}colaborador/`)
@@ -402,7 +405,10 @@ describe('TESTAR: GET, POST, GET ID, PUT', function () {
 });
 
 describe('TESTAR: DELETE', function () {
-
+/*
+*  O teste realiza o DELETE em cascata, de acordo com a sequencia das chaves
+*  PK e FK do banco de dados.
+*/
   it(' 3.5 - DELETE: ', function (done) {
     chai.request(server)
       .delete(`${URL}produto/${idColaborador}/${idLoja}`)
