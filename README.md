@@ -59,7 +59,7 @@ LINK: https://documenter.getpostman.com/view/2974492/ml-finder/7EEdYkF <br />
 ### License
 Copyright (c) 2017 Cleber R. Spirlandeli (contato.cleberrezende@gmail.com)
 
-[logo]: https://github.com/cleberspirlandeli/magalu-finger/blob/master/ml.png "Magalu-Finger"
+[logo]: https://cdn-images-1.medium.com/max/1600/1*4_n18FH8hRrvlLyRufD1sQ.png "Magalu-Finger"
 
 [PostgreSQL]: https://www.postgresql.org/
 [download do PostgreSQL]: https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows
