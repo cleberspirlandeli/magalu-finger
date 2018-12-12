@@ -9,7 +9,7 @@ NPM 5.5.1 <br />
 PostgreSQL 9.6.6 <br /> <br />
 ___
 
-- Para executar o Magalu-Finder é necessario ter instalado as seguintes ferramentas: <br />
+- Para executar o Projeto é necessario ter instalado as seguintes ferramentas: <br />
 
 Banco de Dados: [PostgreSQL] 9.6 ou superior. Clique para realizar o [download do PostgreSQL]. <br />
 Servidor: [Node Js] 8 ou superior. <br />
