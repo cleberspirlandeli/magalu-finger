@@ -1,6 +1,6 @@
 ![alt text][logo]
 
-# Projeto LuizaLabs - Magalu-Finder
+# Projeto
 
 Tecnologias utilizadas: <br />
 Node Js 8.9.0 <br />
